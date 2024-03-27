@@ -7,4 +7,14 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->get('beranda', 'berandacontroller::index');
+//$routes->get('', '::index');
+
+$routes->get('admin/beranda','Admin\BerandaAdminController::index');
+
+$routes->get('admin/petugas','Admin\PetugasController::index');
+
+$routes->get('admin/kelas','Admin\KelasController::index');
+
+$routes->get('admin/peminjaman','Admin\PeminjamanController::index');
+
+$routes->get('admin/barang','Admin\BarangController::index');
