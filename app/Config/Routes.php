@@ -11,7 +11,7 @@ $routes->get('/', 'Home::index');
 
 $routes->get('admin/beranda','Admin\BerandaAdminController::index');
 
-$routes->get('admin/petugas','Admin\PetugasController::index');
+$routes->get('admin/pengguna','Admin\PenggunaController::index');
 
 $routes->get('admin/kelas','Admin\KelasController::index');
 

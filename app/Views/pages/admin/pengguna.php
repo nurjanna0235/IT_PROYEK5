@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Kelola Kelas</h1>
+                <h1 class="m-0">Kelola Pengguna</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -29,19 +29,22 @@
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Kelas</th>
-                    <th scope="col">Jurusan</th>
-                    <th scope="col">Jumlah Siswa</th>
-                    <th scope="col">Aksi </th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">NIP</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">No HP</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>1 A</td>
-                    <td>Multimedia</td>
-                    <td>28</td>
-
+                    <td>Nurjanna</td>
+                    <td>22222</td>
+                    <td>angsau</td>
+                    <td>0812</td>
+                    <td>xxxx</td>
                     <td>
                         <button type="button" class="btn btn-info">Edit</button>
                         <button type="button" class="btn btn-danger">Hapus</button>
