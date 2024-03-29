@@ -9,6 +9,20 @@ class KelasController extends BaseController
 {
     public function index()
     {
-        return view('pages/admin/kelas');
+        $data = [
+            'page' => 'Kelas'
+        ];
+
+        return view('pages/admin/kelas/kelas',$data);
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'page' => 'Kelas'
+        ];
+
+        return view('pages/admin/kelas/tambah',$data);
     }
 }
+

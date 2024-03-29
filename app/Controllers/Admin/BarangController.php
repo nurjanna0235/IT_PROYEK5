@@ -9,6 +9,19 @@ class BarangController extends BaseController
 {
     public function index()
     {
-        return view('pages/admin/barang');
+        $data = [
+            'page' => 'Barang'
+        ];
+
+        return view('pages/admin/barang/barang',$data);
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'page' => 'Barang'
+        ];
+
+        return view('pages/admin/barang/tambah',$data);
     }
 }

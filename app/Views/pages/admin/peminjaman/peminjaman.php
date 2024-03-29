@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Kelola Kelas</h1>
+                <h1 class="m-0">Kelola Peminjaman</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -22,25 +22,28 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row justify-content-end mb-3">
-            <button type="button" class="btn btn-success justify-content-end">Tambah</button>
+            <a href="/admin/peminjaman/tambah" type="button" class="btn btn-success justify-content-end">Tambah</a>
         </div>
 
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Kelas</th>
-                    <th scope="col">Jurusan</th>
-                    <th scope="col">Jumlah Siswa</th>
-                    <th scope="col">Aksi </th>
+                    <th scope="col">Nama Guru</th>
+                    <th scope="col">Tanggal Peminjaman </th>
+                    <th scope="col">Tenggat Peminjaman</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>1 A</td>
-                    <td>Multimedia</td>
-                    <td>28</td>
+                    <td>Salma Syafina</td>
+                    <td>02 januari 2024</td>
+                    <td>23 januari 2024</td>
+                    <td>belum dikembalikan</td>
+
 
                     <td>
                         <button type="button" class="btn btn-info">Edit</button>

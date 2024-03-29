@@ -9,6 +9,19 @@ class PenggunaController extends BaseController
 {
     public function index()
     {
-        return view('pages/admin/pengguna');
+        $data = [
+            'page' => 'Pengguna'
+        ];
+
+        return view('pages/admin/pengguna/pengguna',$data);
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'page' => 'Pengguna'
+        ];
+
+        return view('pages/admin/pengguna/tambah',$data);
     }
 }

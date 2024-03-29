@@ -9,7 +9,11 @@ class BerandaAdminController extends BaseController
 {
     public function index()
     {
-        return view('pages/admin/beranda_admin');
+        $data = [
+            'page' => 'Beranda'
+        ];
+
+        return view('pages/admin/beranda/beranda_admin', $data);
     }
 
 }

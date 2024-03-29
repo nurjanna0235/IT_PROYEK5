@@ -211,8 +211,8 @@
                     <ul class="nav nav-pills nav-sidebar flex-column">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="<?php echo base_url('admin/beranda') ?>" class="nav-link active">
+                        <li class="nav-item menu-open">
+                            <a href="<?php echo base_url('admin/beranda') ?>" class="nav-link <?php echo $page == 'Beranda' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Beranda
@@ -222,8 +222,8 @@
                             <ul class="nav nav-treeview">
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?php echo base_url('admin/pengguna') ?>" class="nav-link">
+                        <li class="nav-item menu-open">
+                            <a href="<?php echo base_url('admin/pengguna') ?>" class="nav-link <?php echo $page == 'Pengguna' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     pengguna
@@ -235,7 +235,7 @@
                         </li>
 
                         <li class="nav-item menu-open">
-                            <a href="<?php echo base_url('admin/kelas') ?>" class="nav-link ">
+                            <a href="<?php echo base_url('admin/kelas') ?>" class="nav-link <?php echo $page == 'Kelas' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Kelas
@@ -247,7 +247,7 @@
                         </li>
 
                         <li class="nav-item menu-open">
-                            <a href="<?php echo base_url('admin/peminjaman') ?>" class="nav-link ">
+                            <a href="<?php echo base_url('admin/peminjaman') ?>" class="nav-link <?php echo $page == 'Peminjaman' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Peminjaman
@@ -259,7 +259,7 @@
                         </li>
 
                         <li class="nav-item menu-open">
-                            <a href="<?php echo base_url('admin/barang') ?>" class="nav-link ">
+                            <a href="<?php echo base_url('admin/barang') ?>" class="nav-link <?php echo $page == 'Barang' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Barang
@@ -279,8 +279,8 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            
-        
+
+
             <?= $this->renderSection('content') ?>
 
         </div>

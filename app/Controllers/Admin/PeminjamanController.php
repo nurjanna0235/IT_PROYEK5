@@ -9,6 +9,19 @@ class PeminjamanController extends BaseController
 {
     public function index()
     {
-        return view('pages/admin/peminjaman');
+        $data = [
+            'page' => 'Peminjaman'
+        ];
+
+        return view('pages/admin/peminjaman/peminjaman',$data);
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'page' => 'Peminjaman'
+        ];
+
+        return view('pages/admin/peminjaman/tambah',$data);
     }
 }
