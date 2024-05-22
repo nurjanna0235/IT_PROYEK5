@@ -1,22 +1,22 @@
 <?= $this->extend('template/template-admin') ?>
 <?= $this->section('content') ?>
-<form action='/admin/barang/simpan' method='post'>
+<form action="/admin/barang/update/<?php echo $barang['id_barang'] ?>" method="post">
     <div class="container-fluid">
-        <div class=mb-3 text-end>
+        <div class="mb-3">
             <label for="nama_barang" class="form-label">Nama barang</label>
-            <input type="text" class="form-control" id="nama_barang" name="nama_barang" >
+            <input type="text" class="form-control" id="nama_barang" value="<?php echo $barang['nama_barang'] ?>" name="nama_barang" >
         </div>
         <div class="mb-3">
             <label for="kategori_barang" class="form-label">Kategori</label>
-            <input type="text" class="form-control" id="kategori_barang" name ="kategori_barang">
+            <input type="text" class="form-control" id="kategori_barang" value="<?php echo $barang['kategori_barang'] ?>"name ="kategori_barang">
         </div>
         <div class="mb-3">
-            <label for="stok_barang" class="form-label">Stok</label>
-            <input type="text" class="form-control" id="stok_barang" name = "stok_barang">
+            <label for="stok" class="form-label">Stok</label>
+            <input type="text" class="form-control" id="stok_barang" value="<?php echo $barang['stok_barang'] ?>"name = "stok_barang">
         </div>
         <div class="mb-3">
             <label for="detail_barang" class="form-label">Detail barang</label>
-            <input type="text" class="form-control" id="detail_barang" name = "detail_barang">
+            <input type="text" class="form-control" id="detail_barang" value="<?php echo $barang['detail_barang'] ?>" name = "detail_barang">
         </div>
         <div class="input-group mb-3">
             <label class="input-group-text" for="kondisi_barang">Kondisi barang</label>
@@ -26,7 +26,7 @@
             </select>
         </div>
         
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Update</button>
 </form>
 </div>
 

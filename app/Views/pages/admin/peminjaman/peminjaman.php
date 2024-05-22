@@ -21,15 +21,25 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <div class="row justify-content-end mb-3">
-            <a href="/admin/peminjaman/tambah" type="button" class="btn btn-success justify-content-end">Tambah</a>
+        <div class="mb-3 text-end">
+            <a href="/admin/peminjaman/tambah" type="button" class="btn btn-success">Tambah</a>
         </div>
+        <?php if (session('pesan')) : ?>
+            <div class="card bg-gradient-primary">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <?php echo session('pesan') ?>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        <?php endif; ?>
 
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Nama Guru</th>
+                    <th scope="col">Nama Peminjam</th>
                     <th scope="col">Tanggal Peminjaman </th>
                     <th scope="col">Tenggat Peminjaman</th>
                     <th scope="col">Status</th>
@@ -37,20 +47,24 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($peminjaman as $item) : ?>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Salma Syafina</td>
-                    <td>02 januari 2024</td>
-                    <td>23 januari 2024</td>
-                    <td>belum dikembalikan</td>
+                    <td><?php echo $item['nama_peminjam'] ?></td>
+                    <td><?php echo $item['tanggal_peminjaman'] ?></td>
+                    <td><?php echo $item['tenggat_peminjaman'] ?></td>
+                    <td><?php echo $item['status'] ?></td>
 
 
                     <td>
-                        <button type="button" class="btn btn-info">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                    <a href="/admin/peminjaman/edit/<?php echo $item['id_peminjaman'] ?>" type="button" class="btn btn-info justify-content-end text-white">Edit</a>
+                    <a href="/admin/peminjaman/hapus/<?php echo $item['id_peminjaman'] ?>" class="btn 
+                    btn-danger">Hapus</button>
                     </td>
                 </tr>
+                <?php endforeach ?>
             </tbody>
+
         </table>
 
     </div>

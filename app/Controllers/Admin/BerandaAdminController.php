@@ -15,5 +15,4 @@ class BerandaAdminController extends BaseController
 
         return view('pages/admin/beranda/beranda_admin', $data);
     }
-
 }

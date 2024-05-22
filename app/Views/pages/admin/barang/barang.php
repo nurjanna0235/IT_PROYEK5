@@ -21,10 +21,19 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <div class="row justify-content-end mb-3">
+        <div class="mb-3 text-end">
             <a href="/admin/barang/tambah" type="button" class="btn btn-success justify-content-end">Tambah</a>
         </div>
-
+        <?php if (session('pesan')) : ?>
+            <div class="card bg-gradient-primary">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <?php echo session('pesan') ?>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        <?php endif; ?>
         <table class="table">
             <thead>
                 <tr>
@@ -39,20 +48,23 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($barang as $item) : ?>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Laptop</td>
-                    <td>Laptopo</td>
-                    <td>20/td>
-                    <td>baik</td>
-                    <td>hsgag</td>
-
-
+                    <td><?php echo $item['nama_barang'] ?></td>
+                    <td><?php echo $item['kategori_barang'] ?></td>
+                    <td><?php echo $item['stok_barang'] ?></td>
+                    <td><?php echo $item['kondisi_barang'] ?></td>
+                    <td><?php echo $item['detail_barang'] ?></td>
+  
                     <td>
-                        <button type="button" class="btn btn-info">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                    <a href="/admin/barang/edit/<?php echo $item['id_barang'] ?>"  type="button" class="btn btn-info justify-content-end text-white">Edit</a>
+                        <a href="/admin/barang/hapus/<?php echo $item['id_barang'] ?>" class="btn 
+                    btn-danger">Hapus</button>
+
                     </td>
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
 

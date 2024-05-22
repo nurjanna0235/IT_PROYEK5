@@ -1,20 +1,24 @@
 <?= $this->extend('template/template-admin') ?>
 <?= $this->section('content') ?>
-<form action='/admin/peminjaman/simpan' method='post'>
+<form action="/admin/peminjaman/update/<?php echo $peminjaman['id_peminjaman'] ?>" method="post">
     <div class="container-fluid">
-        <div class=mb-3 text-end>
+    <div class="mb-3">
+            
             <label for="nama_guru" class="form-label">Nama Peminjam</label>
-            <input type="text" class="form-control" id="nama_guru" name="nama_peminjam">
+            <input type="text" class="form-control" id="nama_guru" value="<?php echo $peminjaman['nama_peminjam']?>" name="nama_peminjam" >
         </div>
         <div class="mb-3">
             <label for="tanggal_peminjaman" class="form-label">Tanggal peminjaman</label>
-            <input type="date" class="form-control" id="tanggal_peminjaman" name="tanggal_peminjaman">
+            <input type="date" class="form-control" id="tanggal_peminjaman" value="<?php echo $peminjaman['tanggal_peminjaman']?>" name ="tanggal_peminjaman">
         </div>
         <div class="mb-3">
             <label for="tenggat_peminjaman" class="form-label">Tenggat peminjaman</label>
-            <input type="date" class="form-control" id="tenggat_peminjaman" name="tenggat_peminjaman">
+            <input type="date" class="form-control" id="tenggat_peminjaman" value="<?php echo $peminjaman['tenggat_peminjaman']?>" name= "tenggat_peminjaman">
         </div>
-      
+        <div class="mb-3">
+            <label for="status" class="form-label">status</label>
+            <input type="text" class="form-control" value="<?php echo $peminjaman['status']?>"  id="status" name = "status">
+        </div>
         <div class="input-group mb-3">
             <label class="input-group-text" for="barang">barang</label>
             <select class="form-select" id="barang" name="id_barang">
@@ -33,13 +37,15 @@
             <label class="input-group-text" for="kelas">Kelas</label>
             <select class="form-select" id="kelas" name="id_kelas">
                 <option value="">Pilih Kelas...</option>
-                <?php foreach ($kelas as $item): ?>
+                <?php foreach($kelas as $item):?>
                     <option value="<?php echo $item['id_kelas'] ?>"><?php echo $item['nama_kelas'] ?></option>
-                <?php endforeach ?>
+                <?php endforeach?>
             </select>
         </div>
+       
+      
 
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Update</button>
 </form>
 </div>
 

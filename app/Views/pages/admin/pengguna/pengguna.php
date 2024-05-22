@@ -21,9 +21,20 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <div class="row justify-content-end mb-3">
+        <div class="mb-3 text-end">
             <a href="/admin/pengguna/tambah" type="button" class="btn btn-success justify-content-end">Tambah</a>
         </div>
+        <?php if (session('pesan')) : ?>
+            <div class="card bg-gradient-primary">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <?php echo session('pesan') ?>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        <?php endif; ?>
+
 
         <table class="table">
             <thead>
@@ -34,22 +45,26 @@
                     <th scope="col">Alamat</th>
                     <th scope="col">No HP</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Level</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Nurjanna</td>
-                    <td>22222</td>
-                    <td>angsau</td>
-                    <td>0812</td>
-                    <td>xxxx</td>
-                    <td>
-                        <button type="button" class="btn btn-info">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
-                    </td>
-                </tr>
+                <?php foreach ($pengguna as $item) : ?>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><?php echo $item['nama_pengguna'] ?></td>
+                        <td><?php echo $item['nip'] ?></td>
+                        <td><?php echo $item['alamat'] ?></td>
+                        <td><?php echo $item['no_hp'] ?></td>
+                        <td><?php echo $item['email'] ?></td>
+                        <td><?php echo $item['level'] ?></td>
+                        <td>
+                            <a href="/admin/pengguna/edit/<?php echo $item['id_pengguna'] ?>" type="button" class="btn btn-info justify-content-end text-white">Edit</a>
+                            <a href="/admin/pengguna/hapus/<?php echo $item['id_pengguna'] ?>" class="btn btn-danger">Hapus</button>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
 

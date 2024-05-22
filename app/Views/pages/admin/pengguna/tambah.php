@@ -1,10 +1,10 @@
 <?= $this->extend('template/template-admin') ?>
 <?= $this->section('content') ?>
-<form>
+<form action="/admin/pengguna/simpan" method="post">
     <div class="container-fluid">
-        <div class="mb-3">
+        <div class= mb-3 text-end>
             <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama" >
+            <input type="text" class="form-control" id="nama" name="nama_pengguna" >
         </div>
         <div class="mb-3">
             <label for="nip" class="form-label">NIP</label>
@@ -15,8 +15,8 @@
             <input type="text" class="form-control" id="email" name= "email">
         </div>
         <div class="mb-3">
-            <label for="no_handphone" class="form-label">Nomor Handphone</label>
-            <input type="text" class="form-control" id="no_handphone" name = "no_handphone">
+            <label for="no_hp" class="form-label">Nomor Handphone</label>
+            <input type="text" class="form-control" id="no_hp" name = "no_hp">
         </div>
         <div class="mb-3">
             <label for="alamat" class="form-label">Alamat</label>

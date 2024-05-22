@@ -1,6 +1,6 @@
 <?= $this->extend('template/template-admin') ?>
 <?= $this->section('content') ?>
-<form>
+<form action='/admin/kelas/simpan' method='post'>
     <div class="container-fluid">
         <div class="mb-3">
             <label for="nama_kelas" class="form-label">Nama Kelas</label>

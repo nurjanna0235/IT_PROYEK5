@@ -21,9 +21,19 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <div class="row justify-content-end mb-3">
+        <div class="mb-3 text-end">
             <a href="/admin/kelas/tambah" type="button" class="btn btn-success justify-content-end">Tambah</a>
         </div>
+        <?php if (session('pesan')) : ?>
+            <div class="card bg-gradient-primary">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <?php echo session('pesan') ?>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        <?php endif; ?>
 
         <table class="table">
             <thead>
@@ -36,17 +46,19 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach ($kelas as $item) : ?>
                 <tr>
                     <th scope="row">1</th>
-                    <td>1 A</td>
-                    <td>Multimedia</td>
-                    <td>28</td>
+                    <td> <?php echo $item['nama_kelas'] ?></td>
+                    <td><?php echo $item['jurusan'] ?></td>
+                    <td><?php echo $item['jumlah_siswa'] ?></td>
 
                     <td>
-                        <button type="button" class="btn btn-info">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                    <a href="/admin/kelas/edit/<?php echo $item['id_kelas'] ?>" type="button" class="btn btn-info justify-content-end text-white">Edit</a>
+                    <a href="/admin/kelas/hapus/<?php echo $item['id_kelas'] ?>" class="btn btn-danger">Hapus</button>
                     </td>
                 </tr>
+            <?php endforeach ?>
             </tbody>
         </table>
 
